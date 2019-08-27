@@ -32,7 +32,7 @@ export default class CreateTodo extends Component {
     const newTodo = { description, responsible, priority, completed };
     axios
       .post("http://localhost:9000/todos/add", newTodo)
-      .then(res => console.log(res.data));
+      .then(res => console.log(res), this.props.history.push('/todos'));
     this.setState({
       description: "",
       responsible: "",
